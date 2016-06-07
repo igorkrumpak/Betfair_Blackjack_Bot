@@ -4,11 +4,9 @@ import java.awt.AWTException;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Random;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
@@ -168,9 +166,9 @@ public class Game {
 							logger.info("BET WON");
 							bank = bank + 1;
 							logger.info("BANK: " + bank);
-							if(bank >= 25 || bank < -20) {
-								System.exit(0);
-							}
+//							if(bank >= 25 || bank < -20) {
+//								System.exit(0);
+//							}
 						}
 
 					} else if (result.contains("WINNER")) {
@@ -180,9 +178,9 @@ public class Game {
 							logger.info("BET LOST");
 							bank = bank - (round.getLayOdds() - 1);
 							logger.info("BANK: " + bank);
-							if(bank >= 30 || bank < -20) {
-								System.exit(0);
-							}
+//							if(bank >= 30 || bank < -20) {
+//								System.exit(0);
+//							}
 						}
 					}
 				}
@@ -250,30 +248,30 @@ public class Game {
 
 	private void placeBet(Round round) throws InterruptedException {
 		round.setBetPlaced(true);
-		Random random = new Random();
-		Thread.sleep(random.nextInt(1000) + 800);
-		robot.mouseMove(PLACE_BET_X, PLACE_BET_Y);
-		robot.mousePress(InputEvent.BUTTON1_MASK);
-		robot.mouseRelease(InputEvent.BUTTON1_MASK);
-		Thread.sleep(random.nextInt(1000) + 800);
-		robot.mouseMove(LAY_ALL_X, LAY_ALL_Y);
-		robot.mousePress(InputEvent.BUTTON1_MASK);
-		robot.mouseRelease(InputEvent.BUTTON1_MASK);
-		Thread.sleep(random.nextInt(1000) + 1200);
-		robot.mouseMove(DEALER_WINS_OR_TIES_ALL_X, DEALER_WINS_OR_TIES_ALL_Y);
-		robot.mousePress(InputEvent.BUTTON1_MASK);
-		robot.mouseRelease(InputEvent.BUTTON1_MASK);
-		robot.keyPress(KeyEvent.VK_1);
-		robot.keyRelease(KeyEvent.VK_1);
-		Thread.sleep(random.nextInt(1000) + 1200);
-		robot.mouseMove(SUBMIT_1_X, SUBMIT_1_Y);
-		robot.mousePress(InputEvent.BUTTON1_MASK);
-		robot.mouseRelease(InputEvent.BUTTON1_MASK);
-		Thread.sleep(random.nextInt(1000) + 800);
-		robot.mouseMove(SUBMIT_2_X, SUBMIT_2_Y);
-		robot.mousePress(InputEvent.BUTTON1_MASK);
-		robot.mouseRelease(InputEvent.BUTTON1_MASK);
-		logger.info(round.toString());
+//		Random random = new Random();
+//		Thread.sleep(random.nextInt(1000) + 800);
+//		robot.mouseMove(PLACE_BET_X, PLACE_BET_Y);
+//		robot.mousePress(InputEvent.BUTTON1_MASK);
+//		robot.mouseRelease(InputEvent.BUTTON1_MASK);
+//		Thread.sleep(random.nextInt(1000) + 800);
+//		robot.mouseMove(LAY_ALL_X, LAY_ALL_Y);
+//		robot.mousePress(InputEvent.BUTTON1_MASK);
+//		robot.mouseRelease(InputEvent.BUTTON1_MASK);
+//		Thread.sleep(random.nextInt(1000) + 1200);
+//		robot.mouseMove(DEALER_WINS_OR_TIES_ALL_X, DEALER_WINS_OR_TIES_ALL_Y);
+//		robot.mousePress(InputEvent.BUTTON1_MASK);
+//		robot.mouseRelease(InputEvent.BUTTON1_MASK);
+//		robot.keyPress(KeyEvent.VK_1);
+//		robot.keyRelease(KeyEvent.VK_1);
+//		Thread.sleep(random.nextInt(1000) + 1200);
+//		robot.mouseMove(SUBMIT_1_X, SUBMIT_1_Y);
+//		robot.mousePress(InputEvent.BUTTON1_MASK);
+//		robot.mouseRelease(InputEvent.BUTTON1_MASK);
+//		Thread.sleep(random.nextInt(1000) + 800);
+//		robot.mouseMove(SUBMIT_2_X, SUBMIT_2_Y);
+//		robot.mousePress(InputEvent.BUTTON1_MASK);
+//		robot.mouseRelease(InputEvent.BUTTON1_MASK);
+//		logger.info(round.toString());
 		
 	}
 
