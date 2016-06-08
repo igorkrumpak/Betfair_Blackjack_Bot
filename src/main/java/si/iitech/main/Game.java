@@ -4,9 +4,11 @@ import java.awt.AWTException;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
@@ -16,7 +18,8 @@ import com.github.axet.lookup.OCR;
 public class Game {
 	
 	public static final int GAME_ID_X = 700;
-	public static final int GAME_ID_Y = 238;
+//	public static final int GAME_ID_Y = 238;       with login
+	public static final int GAME_ID_Y = 230;       
 
 	public static final int CARD_WIDTH = 20;
 	public static final int CARD_HEIGHT = 16;
@@ -126,8 +129,6 @@ public class Game {
 				 	double layOdds = readDoubleOrIntValueFromLocation(LAY_DEALER_WINS_OR_TIES_ALL_ODD, FONT_ODDS);
 					round.setLayOdds(layOdds);
 					
-//					System.out.println(round.toString());
-					
 //					if(layOdds >= 120) {
 //						placeBet(round);
 //					}
@@ -135,7 +136,7 @@ public class Game {
 
 					if (	layOdds > 0 && 
 							(layOdds <= 6.0) &&
-//							dealerSum > 5 && 
+							dealerSum > 3 && 
 							player1Sum > 0 && 
 							player2Sum > 0 && 
 							player3Sum > 0  &&
@@ -271,7 +272,7 @@ public class Game {
 //		robot.mouseMove(SUBMIT_2_X, SUBMIT_2_Y);
 //		robot.mousePress(InputEvent.BUTTON1_MASK);
 //		robot.mouseRelease(InputEvent.BUTTON1_MASK);
-//		logger.info(round.toString());
+		logger.info(round.toString());
 		
 	}
 
