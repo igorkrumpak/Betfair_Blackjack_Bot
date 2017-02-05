@@ -1,4 +1,4 @@
-package si.iitech.blackjack;
+package si.iitech.blackjack.game;
 
 import java.awt.AWTException;
 import java.awt.Robot;

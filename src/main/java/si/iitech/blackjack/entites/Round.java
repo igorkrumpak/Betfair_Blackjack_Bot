@@ -1,4 +1,9 @@
-package si.iitech.blackjack;
+package si.iitech.blackjack.entites;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import si.iitech.blackjack.game.Bet;
 
 public class Round {
 
@@ -64,6 +69,21 @@ public class Round {
 		this.player4 = player4;
 	}
 
+	public List<Hand> getAllParticipants() {
+		List<Hand> allPlayers = getAllPlayers();
+		allPlayers.add(dealer);
+		return allPlayers;
+	}
+
+	public List<Hand> getAllPlayers() {
+		List<Hand> players = new ArrayList<Hand>();
+		players.add(player1);
+		players.add(player2);
+		players.add(player3);
+		players.add(player4);
+		return players;
+	}
+
 	public boolean isRoundEnded() {
 		return roundEnded;
 	}
@@ -102,6 +122,10 @@ public class Round {
 
 	public void setLayOneOrMoreHas5CardsBet(Bet layOneOrMoreHas5CardsBet) {
 		this.layOneOrMoreHas5CardsBet = layOneOrMoreHas5CardsBet;
+	}
+
+	public boolean isSameRound(Round round) {
+		return this.gameId == round.getGameId();
 	}
 
 	public void update(Round round) {

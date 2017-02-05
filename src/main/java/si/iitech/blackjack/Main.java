@@ -1,9 +1,9 @@
-package si.iitech.main;
+package si.iitech.blackjack;
 
 import java.awt.AWTException;
 import java.io.IOException;
 
-import si.iitech.blackjack.Game;
+import si.iitech.blackjack.entites.Game;
 
 public class Main {
 

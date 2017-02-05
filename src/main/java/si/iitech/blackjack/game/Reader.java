@@ -1,4 +1,4 @@
-package si.iitech.blackjack;
+package si.iitech.blackjack.game;
 
 import java.awt.AWTException;
 import java.awt.Rectangle;
@@ -11,7 +11,10 @@ import javax.imageio.ImageIO;
 
 import com.github.axet.lookup.OCR;
 
-import si.iitech.main.Main;
+import si.iitech.blackjack.Main;
+import si.iitech.blackjack.entites.Card;
+import si.iitech.blackjack.entites.Hand;
+import si.iitech.blackjack.entites.Round;
 
 public class Reader {
 	

@@ -1,11 +1,11 @@
-package si.iitech.blackjack;
+package si.iitech.blackjack.entites;
 
 import java.io.IOException;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-import si.iitech.blackjack.calculator.Calculator;
+import si.iitech.blackjack.game.Reader;
 
 public class Game {
 	
@@ -17,9 +17,7 @@ public class Game {
 	private FileHandler fileHandler;
 	
 	private Round activeRound;
-	private boolean backCalculated = false;
 	private Reader reader;
-	private Calculator calculator = new Calculator();
 	
 	private long counter;
 	double bank = 0.0;
@@ -45,37 +43,17 @@ public class Game {
 		
 		while(true) {
 			Round round = reader.readRound();
-			
 			//We save current round for later use
-			if(activeRound == null || activeRound.getGameId() != round.getGameId()) {
+			if(activeRound == null || !activeRound.isSameRound(round)) {
 				activeRound = round;
 			} else {
 				activeRound.update(round);
 			}
+
 			
 			
 			
 			
-//			
-//			if(!currentRound.isBetPlaced()) {
-//				currentRound = activeRound;
-//				calculator.calculateIfPlaceBet(currentRound);
-//			}
-//			
-//			if(currentRound.isBetPlaced() && !currentRound.isRoundEnded()) {
-//				reader.checkIfWon(currentRound);
-//			}
-//			
-//			
-//			if(currentRound.isRoundEnded() && !backCalculated) {
-//				if(currentRound.isBetWon()) bank = bank + 1;
-//				if(!currentRound.isBetWon()) bank = bank - (currentRound.getLayOdds() - 1);
-//				System.out.println(bank);
-//				backCalculated = true;
-//			}
-//			
-//			if(counter % 150 == 0) HumanGestures.getInstance().restartBrowser();
-//			counter++;
 			Thread.sleep(4000);
 		}
 		
